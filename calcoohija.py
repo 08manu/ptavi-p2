@@ -18,9 +18,8 @@ class CalculadoraHija(calcoo.Calculadora):
 
 calculadora = CalculadoraHija()
 
-operaciones = {'suma': calculadora.suma, 'resta': calculadora.resta, 
+operaciones = {'suma': calculadora.suma, 'resta': calculadora.resta,
                'multiplica': calculadora.mult, 'divide': calculadora.div}
-
 
 if __name__ == "__main__":
 
