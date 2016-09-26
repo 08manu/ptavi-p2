@@ -4,28 +4,36 @@
 import sys
 import calcoohija
 
-fich = open('/tmp/git/fichero' , 'r')
+fich = open(sys.argv[1] , 'r')
 lineas = fich.readlines()
 
 
-for linea in lineas:
-    calculadora = calcoohija.CalculadoraHija()
-    element = linea[:-1].split(',') 
-    print(linea[0])
-    if linea[0] == "suma":
-        resultado = calculadora.suma(element[1], element[2]) 
-    
-        #resultado = calculadora.suma(resultado, element[3]) 
-        #resultado = calculadora.suma(resultado, element[4]) 
-        #resultado = calculadora.suma(resultado, element[5]) 
-        #resultado = calculadora.suma(resultado, element[6])
-         
-        for elemento in linea[3:]:
-            resultado = calculadora.suma(resultado, elemento) 
-           
-        print(resultado)
 
-    #if linea[0] == "resta":
+calculadora = calcoohija.CalculadoraHija()
+
+for linea in lineas:
+	element = linea[:-1].split(',')
+
+		
+	if element[0] == "suma":
+		resultado = calculadora.suma(int(element[1]), int(element[2]))		     
+		for operacion in element[3:]:
+		    resultado = calculadora.suma(resultado, int(operacion)) 
+	elif element[0] == "resta":
+		resultado = calculadora.resta(int(element[1]), int(element[2]))		     
+		for operacion in element[3:]:
+		    resultado = calculadora.resta(resultado, int(operacion))  
+	elif element[0] == "multiplica":
+		resultado = calculadora.mult(int(element[1]), int(element[2]))		     
+		for operacion in element[3:]:
+		    resultado = calculadora.mult(resultado, int(operacion)) 
+	elif element[0] == "divide":
+		resultado = calculadora.div(int(element[1]), int(element[2]))		     
+		for operacion in element[3:]:
+		   resultado = calculadora.div(resultado, int(operacion))    
+	print(resultado)
+
+		
         
         
    

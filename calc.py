@@ -13,20 +13,19 @@ def minus(op1, op2):
 	""" Function to substract the operands """
 	return op1 - op2
 
+
 def mult(op1, op2):
 	return op1 * op2
+
 
 def div(op1, op2):
 	return op1 / op2
 
 
-
 if __name__ == "__main__":
-	#print(sys.argv)
-	#sys.exit()
 	try:
-		operando1 = int(sys.argv[1]) #como tiene corchete puede ser una lista o un diccionario
-		operando2 = int(sys.argv[3]) #sys,arg -->argumentos que me va a pasar el sistema(3 suma 2)
+		operando1 = int(sys.argv[1])
+		operando2 = int(sys.argv[3])
 	except ValueError:
 		sys.exit("Error: Non numerical parameters")
 
