@@ -16,10 +16,13 @@ class CalculadoraHija(calcoo.Calculadora):
         except ZeroDivisionError:
             sys.exit("Error: Division by zero")
 
+calculadora = CalculadoraHija()
+
+operaciones = {'suma':calculadora.suma, 'resta':calculadora.resta, 
+                    'multiplica':calculadora.mult, 'divide':calculadora.div}
+
 
 if __name__ == "__main__":
-
-    calculadora = CalculadoraHija()
 
     try:
         operando1 = int(sys.argv[1])
@@ -27,12 +30,6 @@ if __name__ == "__main__":
     except ValueError:
         sys.exit("Error: Non numerical parametres")
 
-    if sys.argv[2] == "suma":
-        resultado = calculadora.suma(operando1, operando2)
-    elif sys.argv[2] == "resta":
-        resultado = calculadora.resta(operando1, operando2)
-    elif sys.argv[2] == "multiplicar":
-        resultado = calculadora.mult(operando1, operando2)
-    elif sys.argv[2] == "dividir":
-        resultado = calculadora.div(operando1, operando2)
+    resultado = operaciones[sys.argv[2]](operando1, operando2)
+
     print(resultado)
