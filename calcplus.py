@@ -25,11 +25,11 @@ for linea in lineas:
         for operacion in element[3:]:
             resultado = calculadora.resta(resultado, int(operacion))
     elif element[0] == "multiplica":
-        resultado = calculadora.mult(int(element[1]), int(element[2])
+        resultado = calculadora.mult(int(element[1]), int(element[2]))
         for operacion in element[3:]:
             resultado = calculadora.mult(resultado, int(operacion))
     elif element[0] == "divide":
         resultado = calculadora.div(int(element[1]), int(element[2]))
         for operacion in element[3:]:
             resultado = calculadora.div(resultado, int(operacion))
-    print(resultado)   
+    print(resultado)
